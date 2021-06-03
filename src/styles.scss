@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-color{
+    background-color: #EDF0F1;
+}
+.bg-white{
+    background-color: #fff;
+}
+.bg-cart{
+    background-color: #F5F5F5;
+}
+.p-5{
+    padding: 5px;
+}
+.column {
+    float: left;
+    width: 33%;
+    padding: 10px;
+  /* Should be removed. Only for demonstration */
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .text-end{
+      text-align: end;
+  }
+  .pr-2{
+    padding: 1px 10px;
+  }
+  .pr-3{
+    padding: 5px 20px;
+  }
+  .p-20{
+      padding: 20px;
+  }

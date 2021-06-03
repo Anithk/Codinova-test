@@ -1,0 +1,28 @@
+
+<div class="bg-color">
+    <div class="product-item pr-3" *ngFor="let item of products; let i=index" >
+        <div (mouseenter)="hoverIdx = i" (mouseleave)="hoverIdx = -1" class="product-info"  (click)="addToCart(item)">
+           <div [ngClass]="{ 'overlay-icon': true, 'hide': hoverIdx !== i }" >
+                 <p class="price-info">Price: {{item.price}}</p>
+                 <p class="description">{{item.description}}</p>                
+        </div>
+            <div class="product-info-img" >
+                <img [src]="item.image">
+            </div>
+            <div class="overlay">
+            <div class="product-info-description">
+                <p class="title">{{item.name | uppercase}}</p>
+                <!-- <p class="description">{{item.description}}</p> -->
+            </div>
+            <!-- <div class="price">
+                        
+                <span class="price-info">Price: {{item.price}}</span>
+            </div> -->
+            <!-- <div>
+                <button  class="btn btn-buy btn-sm btn-block" (click)="addToCart(item)">Add to Cart </button>
+            </div> -->
+        </div>
+    </div>
+    </div>
+</div>
+

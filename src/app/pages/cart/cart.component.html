@@ -1,0 +1,184 @@
+<!-- cart box start -->
+<div class="bg-color">
+<div >
+    <table class="cart-tb pr-2">
+        <tr class="tb-head">
+            <th class="item1">Product</th>
+            <th class="item">Price</th>
+            <th class="item1">Quantity</th>
+            <th class="item1">Total</th>
+        </tr>
+        <tr *ngFor="let item of cartData; let i=index" class="bg-white lh-30" style="color: #B6BDC3; font-size: .8rem;">
+            <!-- <button class="cart-qty-plus" type="button" value="+" (click)="removeItem(id)">+</button> -->
+            <td class="item1">{{item.name}}</td>
+            <td class="item">{{item.price}}</td>
+            <td class="item">
+                <div class="button-container  ">
+                    <button class="cart-qty-minus" type="button" value="-" (click)="updateQuantity('decrease', item, i)">-</button>
+                    <input type="text" name="qty" min="0" class="qty form-control" [value]="item.quantity" >
+                    <button class="cart-qty-plus" type="button" value="+" (click)="updateQuantity('increase', item, i)">+</button>
+                </div>
+            </td>
+            <td  class="item1">{{item.quantity * item.price}}</td>
+        </tr>
+    </table>
+</div>
+<!-- <div class="cart-total">
+    <div class="cart-total-align ">
+        <div>
+            <p>Subtotal</p>
+        </div>
+        <div class="bg-white">
+           <p> {{totalPrice}}</p>
+        </div>
+    </div>
+    <div class="cart-total-align">
+        <div>
+            <p>VAT Tax</p>
+        </div>
+        <div class="bg-white">
+            <p>00</p>
+        </div>
+    </div>
+    <div class="cart-total-align">
+        <div>
+            <p>Discount</p>
+        </div>
+        <div class="bg-white">
+          <p>00</p>
+        </div>
+    </div>
+    <div class="cart-total-align">
+        <div>
+            <p>Total</p>
+        </div>
+        <div class="bg-white">
+            <p>{{totalPrice}}</p>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary" type="submit">cancel</button>
+        <button class="btn btn-primary" type="submit">Proceed to Checkout</button>
+    </div>
+</div> -->
+<div class="row p-20">
+    <div class=" column ct-head" style="padding:0px">
+        <div class=" pr-2 bg-cart br-top">
+            <p class="line-h-5 ">Subtotal</p>
+        </div>
+        <div class=" pr-2 bg-cart br-top">
+            <p class="line-h-5">VAT Tax</p>
+        </div>
+        <div class=" pr-2 bg-cart br-top">
+            <p class="line-h-5">Discount</p>
+        </div>
+        <div class=" pr-2 bg-cart br-top br-rd">
+            <p class="line-h-5">Total</p>
+        </div>
+    </div>
+    <div class=" column ct-head" style="padding:0px">
+        <div class=" pr-2 bg-white br-top">
+            <p class="line-h-5"> {{totalPrice}}</p>
+         </div>
+        <div class="pr-2 bg-white br-top">
+            <p class="line-h-5">10%</p>
+        </div>
+        <div class=" pr-2 bg-white br-top">
+            <p class="line-h-5">10%</p>
+        </div>
+        <div class=" pr-2 bg-white br-top">
+            <p class="line-h-5"> {{totalPrice}}</p>
+         </div>
+    </div>
+    <div class="text-end column ct-head" style="padding:0px">
+        <div class=" pr-2 bg-white br-top">
+            <p class="line-h-5"> {{qut+1}} items</p>
+         </div>
+        <div class="pr-2 bg-white br-top">
+            <p class="line-h-5">{{discountprice}} INR</p>
+        </div>
+        <div class=" pr-2 bg-white br-top">
+            <p class="line-h-5">{{discountprice}} INR</p>
+        </div>
+        <div class=" pr-2 bg-white br-top bl-rd">
+            <p class="line-h-5"> {{totalPrice}}</p>
+         </div>
+    </div>   
+</div>
+<div class="button-container-bt pbu-20" >
+    <button class="btn1 " type="button" value="+" (click)="removeItem(id)">Cancel Sale</button>
+    <button class="btn2 " type="button" id="openModalButton"  data-toggle="modal" data-target="#openModal" (click)="openModal()">Process Sale</button>
+</div>
+</div>
+
+
+<div id="openModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="openModalLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          
+        <div class="popup">
+            <div style="background-color: #445b67;padding: 10px; color: white;"><h4 class="heading-3" style="margin: 0;">Receipt</h4></div>
+        <div style="padding: 20px;">
+        <div class="content" style="font-size: .8rem; " >
+           <div class="">
+             <h2 style="text-align: center;">Sale No : 00102</h2>
+             <p>Date:{{dateVal | date: 'medium'}}</p>
+             <!-- <table class=" pr-2">
+                <tr class="">
+                    <th class="">Product</th>
+                    <th class="">Quantity</th>
+                    <th class="">Total</th>
+                </tr>
+                <tr *ngFor="let item of cartData; let i=index" class="">
+                    <td class="">{{item.name}}</td>
+                    <td class="">sdfbn</td>
+                    <td  class="">{{item.quantity * item.price}}</td>
+                </tr>
+            </table> -->
+            <div style="justify-content: space-around; display: flex; margin: 0; font-size: .8rem;">
+                <div><p style="margin: 0;">#</p></div>
+                <div style="width: 100px; "><p style="margin: 0; ">Products</p></div>
+                <div><p style="margin: 0;">Quantity</p></div>
+                <div><p style="margin: 0;">Subtotal</p></div>
+            </div>
+            <hr style="margin: 5px 0; background:#BAC5CE">
+            <div style="margin-bottom: 30px;font-size: .8rem;">
+                <div *ngFor="let item of cartData; let i=index" style="justify-content: space-between; display: flex; padding: 0 10px;">
+                    <div><p style="margin: 0;">{{i+1}}</p></div>
+                    <div style="width: 120px;"><p style="margin: 0;">{{item.name}}</p></div>
+                    <div><p style="margin: 0;">{{item.quantity}}</p></div>
+                    <div><p style="margin: 0;">{{item.quantity * item.price}}</p></div>
+                </div>
+            </div>
+       
+            <hr style="margin: 5px 0;">
+            <div style="justify-content: space-between; display: flex; margin: 0;padding: 0 10px; ">
+                <div><p style="margin: 0;">Total</p></div>
+                <div><p style="margin: 0;">{{totalPrice}}</p></div>
+            </div>
+            <hr style="margin: 5px 0; ">
+            <div>
+                <div style="justify-content:flex-end; display: flex; margin: 0;padding: 0 10px; ">
+                    <div style="width: 100px;"><p style="margin: 0;">Discount</p></div>
+                    <div><p style="margin: 0;">10%</p></div>
+                </div>
+            </div>  
+            <hr style="margin: 5px 0;">
+            <div style="">
+                <div style="justify-content:flex-end; display: flex; margin: 0;padding: 0 10px; ">
+                    <div style="width: 100px;"><p style="margin: 0;">VAT</p></div>
+                    <div><p style="margin: 0;">10%</p></div>
+                </div>
+            </div>   
+            <hr style="margin: 20px 0; ">       
+           </div>
+        </div>
+        <div class="">
+            <button type="button" data-dismiss="modal" class="cancel-btn">Close</button>
+         </div>
+        </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>

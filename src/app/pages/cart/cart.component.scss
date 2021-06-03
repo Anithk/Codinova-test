@@ -1,0 +1,140 @@
+.cart-total-align{
+    display: flex;
+    justify-content: space-between;
+    line-height: 0px;
+}
+.cart-total{
+    padding: 0 10px;
+}
+.cart-tb{
+    width: 100%;
+    height: 350px;
+    display: inline-block;
+    overflow: scroll;
+}
+.tb-head{
+    color: #4b4b4b !important;
+    padding: 20px !important;
+}
+.item1{
+    padding: 5px 40px;
+}
+.item{
+    padding: 0 20px;
+  
+}
+.br-top{
+    border-top: 1px solid #E8E8E8;
+}
+.line-h-5{
+line-height: 0px;   
+}
+.br-rd{
+    border-radius: 0 0 0 15px;
+}
+.bl-rd{
+    border-radius: 0 0 15px 0;
+}
+.lh-30{
+    line-height: 30px;
+}
+.button-container{
+    text-align: center;
+    button{
+        background-color: #BAC5CE;
+        color: white;
+        font-weight: 900;
+        border-radius: 5px;
+        border: none;
+        /* padding: 3px; */
+        margin: 2px;
+        outline: none;
+        padding: 0px 5px;
+    }
+    input{
+        border-radius: 5px;
+        border: 1px solid #BAC5CE;
+        width: 15px;
+        padding: 2px;
+        outline: none;
+        padding: 0px 3px;
+    }
+}
+.ct-head{
+    font-size:.8rem;
+    font-weight: 700;
+    color: #4b4b4b;
+}
+.pbu-20{
+    padding: 0 20px 20px 20px;
+}
+.button-container-bt{
+    
+    .btn1{
+        padding: 10px 70px;
+        margin: 0 5px;
+        border: none;
+        background-color:#db3428;
+        color: white;
+        outline: none;
+    }
+    .btn2{
+        padding: 10px 70px;
+        margin: 0 5px;
+        border: none;
+        background-color:#4caf50;
+        color: white;
+        outline: none;
+    }
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    
+    border: 1px solid #888;
+    width: 20%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .cancel-btn{
+   width: 100%;
+   background-color: white;
+   border: 1px solid #BAC5CE;
+   padding: 5px 0;
+  }
+
+
+
+
+
+
+  
